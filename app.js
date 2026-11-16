@@ -1,6 +1,6 @@
 (function () {
   const $ = (s) => document.querySelector(s);
-  let libros = [], filtro = "Todas", idx = 0, timer = null;
+  let libros = [], proximos = [], obrasF = [], filtro = "Todas", oFiltro = "Todas", idx = 0, timer = null;
   const ROM = ["", "I", "II", "III", "IV", "V", "VI", "VII", "VIII", "IX", "X", "XI", "XII", "XIII", "XIV", "XV", "XVI", "XVII", "XVIII", "XIX", "XX"];
   const rom = (n) => ROM[n] || String(n);
   const norm = (t) => (t || "").toLowerCase().normalize("NFD").replace(/[̀-ͯ]/g, "");
@@ -15,6 +15,8 @@
     $("#f-bio").innerHTML = "";
     (s.fundador_bio || []).forEach((p) => { const e = document.createElement("p"); e.textContent = p; $("#f-bio").appendChild(e); });
     $("#i-correo").textContent = s.correo || ""; $("#i-correo").href = "mailto:" + (s.correo || "");
+    $("#g-link").href = s.galeria_url || "https://galeriarenacimiento.com";
+    $("#o-amazon").href = s.amazon_url || "https://www.amazon.com/author/ricardolondono";
   }
 
   function hero(i) {
@@ -48,12 +50,34 @@
       b.onclick = () => abrir(l);
       muro.appendChild(b);
     });
-    muro.hidden = !lista.length; $("#vacio").hidden = lista.length > 0;
+    const pl = proximos.filter((l) => (filtro === "Todas" || l.categoria === filtro) && (!q || norm(l.titulo + " " + l.autor).includes(q)));
+    const caja = $("#prox"); caja.innerHTML = "";
+    pl.forEach((l) => { const d = document.createElement("div"); d.className = "libro-p"; d.innerHTML = '<span class="cinta">Próximamente</span><h4></h4><p></p>'; d.querySelector("h4").textContent = l.titulo; d.querySelector("p").textContent = l.autor; caja.appendChild(d); });
+    $("#prox-caja").hidden = !pl.length;
+    muro.hidden = !lista.length; $("#vacio").hidden = lista.length > 0 || pl.length > 0;
   }
   function filtros() {
-    const cats = ["Todas"].concat([...new Set(libros.map((l) => l.categoria))].sort());
+    const cats = ["Todas"].concat([...new Set(libros.concat(proximos).map((l) => l.categoria))].sort());
     $("#filtros").innerHTML = "";
     cats.forEach((c) => { const b = document.createElement("button"); b.textContent = c; b.className = c === filtro ? "on" : ""; b.onclick = () => { filtro = c; filtros(); pintar(); }; $("#filtros").appendChild(b); });
+  }
+  function estante() {
+    const cats = ["Todas"].concat([...new Set(obrasF.map((l) => l.categoria))]);
+    $("#o-filtros").innerHTML = "";
+    cats.forEach((c) => { const b = document.createElement("button"); b.textContent = c; b.className = c === oFiltro ? "on" : ""; b.onclick = () => { oFiltro = c; estante(); }; $("#o-filtros").appendChild(b); });
+    const e = $("#estante"); e.innerHTML = "";
+    obrasF.filter((l) => oFiltro === "Todas" || l.categoria === oFiltro).forEach((l) => {
+      const a = document.createElement("article"); a.className = "lib";
+      a.innerHTML = '<div class="tapa"><img loading="lazy"></div><div class="info"><h3></h3><p class="st"></p><p class="d"></p><p class="pr"></p><p class="pg"></p><a class="btn oscuro" target="_blank" rel="noopener">Comprar impreso</a></div>';
+      const im = a.querySelector("img"); im.src = l.portada; im.alt = "Portada de " + l.titulo; im.referrerPolicy = "no-referrer";
+      a.querySelector("h3").textContent = l.titulo;
+      a.querySelector(".st").textContent = l.subtitulo || ""; a.querySelector(".st").hidden = !l.subtitulo;
+      a.querySelector(".d").textContent = l.descripcion || "";
+      a.querySelector(".pr").textContent = l.precio ? l.precio + " COP" : "";
+      a.querySelector(".pg").textContent = l.paginas ? l.paginas + " páginas · " + l.categoria : l.categoria;
+      a.querySelector("a").href = l.ae;
+      e.appendChild(a);
+    });
   }
   function abrir(l) {
     $("#m-img").src = portada(l); $("#m-img").alt = "Portada de " + l.titulo;
@@ -74,6 +98,8 @@
   fetch("catalogo.json?t=" + Date.now()).then((r) => r.json()).then((d) => {
     sitio(d.sitio || {});
     libros = (d.libros || []).sort((a, b) => a.numero - b.numero);
+    proximos = d.proximos || []; obrasF = d.obras_fundador || [];
+    estante(); $("#obras").hidden = !obrasF.length;
     $("#f-obras").textContent = libros.length;
     filtros(); pintar(); iniciarHero();
     const m = location.hash.match(/^#libro-(.+)$/);

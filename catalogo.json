@@ -52,6 +52,384 @@
    "Dirige la Revista Colombiana de Medicina y lidera grupos de investigación inscritos en el sistema nacional de ciencia. Es autor de libros sobre neurodesarrollo, historia del cristianismo, teología y negociación, y traductor de clásicos de la espiritualidad cristiana.",
    "Fundó la Biblioteca Real con la convicción de que las grandes obras de la humanidad deben estar al alcance de todos, en ediciones que acompañen al lector."
   ],
-  "correo": "contacto@fundacionreinaelizabeth.com"
- }
+  "correo": "contacto@fundacionreinaelizabeth.com",
+  "galeria_url": "https://galeriarenacimiento.com",
+  "amazon_url": "https://www.amazon.com/author/ricardolondono"
+ },
+ "obras_fundador": [
+  {
+   "id": "30178",
+   "titulo": "Autismo: nuevas fronteras en neurodesarrollo",
+   "subtitulo": "",
+   "categoria": "Neurodesarrollo y autismo",
+   "paginas": 280,
+   "precio": "$110.300",
+   "portada": "https://cdn.autoreseditores.com/cover_thumb/bigger/000030178.jpeg",
+   "ae": "https://www.autoreseditores.com/libro/30178/ricardo-londono-gonzalez/autismo-nuevas-fronteras-en-neurodesarrollo.html",
+   "descripcion": "Revisión interdisciplinaria y actualizada del espectro autista: neurobiología, genética, clínica y modelos de intervención."
+  },
+  {
+   "id": "25862",
+   "titulo": "Manual Trastorno del Espectro Autista",
+   "subtitulo": "Guía general para diagnóstico y tratamiento",
+   "categoria": "Neurodesarrollo y autismo",
+   "paginas": 264,
+   "precio": "$89.300",
+   "portada": "https://cdn.autoreseditores.com/cover_thumb/bigger/000025862.jpeg",
+   "ae": "https://www.autoreseditores.com/libro/25862/ricardo-londono-gonzalez/manual-trastorno-del-espectro-autista.html",
+   "descripcion": "Una guía comprensiva para entender y acompañar a las personas con TEA, desde sus manifestaciones clínicas hasta las estrategias de apoyo."
+  },
+  {
+   "id": "30291",
+   "titulo": "Autiscan Analytics®",
+   "subtitulo": "Prueba para tamizaje y detección del TEA",
+   "categoria": "Neurodesarrollo y autismo",
+   "paginas": 103,
+   "precio": "$67.600",
+   "portada": "https://cdn.autoreseditores.com/cover_thumb/bigger/000030291.jpeg",
+   "ae": "https://www.autoreseditores.com/libro/30291/ricardo-londono-gonzalez/autiscan-analytics.html",
+   "descripcion": "Instrumento clínico para el tamizaje, la detección y el perfil integral dentro del espectro autista, adaptado al contexto latinoamericano."
+  },
+  {
+   "id": "27197",
+   "titulo": "101 preguntas y respuestas sobre el autismo",
+   "subtitulo": "Guía esencial para padres",
+   "categoria": "Neurodesarrollo y autismo",
+   "paginas": 155,
+   "precio": "$61.200",
+   "portada": "https://cdn.autoreseditores.com/cover_thumb/bigger/000027197.jpeg",
+   "ae": "https://www.autoreseditores.com/libro/27197/ricardo-londono-gonzalez/101-preguntas-y-respuestas-sobre-el-autismo.html",
+   "descripcion": "Respuestas claras para los padres que acaban de recibir un diagnóstico de autismo y no saben por dónde empezar."
+  },
+  {
+   "id": "25883",
+   "titulo": "TDAH: guía práctica de intervención",
+   "subtitulo": "",
+   "categoria": "Neurodesarrollo y autismo",
+   "paginas": 150,
+   "precio": "$59.500",
+   "portada": "https://cdn.autoreseditores.com/cover_thumb/bigger/000025883.jpeg",
+   "ae": "https://www.autoreseditores.com/libro/25883/ricardo-londono-gonzalez/tdah-guia-practica-de-intervencion.html",
+   "descripcion": "Orientación y apoyo para pacientes, familias y profesionales que enfrentan el trastorno por déficit de atención e hiperactividad."
+  },
+  {
+   "id": "28560",
+   "titulo": "Trastornos del neurodesarrollo y trastornos neurocognitivos",
+   "subtitulo": "",
+   "categoria": "Neurodesarrollo y autismo",
+   "paginas": 174,
+   "precio": "$75.200",
+   "portada": "https://cdn.autoreseditores.com/cover_thumb/bigger/000028560.jpeg",
+   "ae": "https://www.autoreseditores.com/libro/28560/ricardo-londono-gonzalez/trastornos-del-neurodesarrollo-y-trastornos-neurocognitivos.html",
+   "descripcion": "Obra de referencia para psicólogos, médicos, estudiantes y cuidadores que buscan comprender estas condiciones de manera integral."
+  },
+  {
+   "id": "32768",
+   "titulo": "La desconexión perfecta",
+   "subtitulo": "Un viaje a la vida de las madres en neurodivergencia",
+   "categoria": "Neurodesarrollo y autismo",
+   "paginas": 170,
+   "precio": "$74.700",
+   "portada": "https://cdn.autoreseditores.com/cover_thumb/bigger/000032768.jpeg",
+   "ae": "https://www.autoreseditores.com/libro/32768/ricardo-londono-gonzalez/la-desconexion-perfecta.html",
+   "descripcion": "«Te dijeron que eras una guerrera escogida por Dios. Te mintieron.» Un libro honesto sobre la vida de las madres de hijos neurodivergentes."
+  },
+  {
+   "id": "27108",
+   "titulo": "Divergente",
+   "subtitulo": "El enigma del niño salvaje de Aveyron",
+   "categoria": "Neurodesarrollo y autismo",
+   "paginas": 240,
+   "precio": "$70.300",
+   "portada": "https://cdn.autoreseditores.com/cover_thumb/bigger/000027108.jpeg",
+   "ae": "https://www.autoreseditores.com/libro/27108/ricardo-londono-gonzalez/divergente.html",
+   "descripcion": "La historia de Víctor, el niño hallado viviendo entre animales en los bosques de Aveyron a comienzos del siglo XIX."
+  },
+  {
+   "id": "27746",
+   "titulo": "Manual de neuropatología",
+   "subtitulo": "Trastornos neurodegenerativos",
+   "categoria": "Medicina",
+   "paginas": 229,
+   "precio": "$134.700",
+   "portada": "https://cdn.autoreseditores.com/cover_thumb/bigger/000027746.jpeg",
+   "ae": "https://www.autoreseditores.com/libro/27746/ricardo-londono-gonzalez/manual-de-neuropatologia.html",
+   "descripcion": "Guía exhaustiva y accesible sobre los trastornos neurodegenerativos para profesionales de la salud, investigadores y estudiantes."
+  },
+  {
+   "id": "30870",
+   "titulo": "Semiología médica integral",
+   "subtitulo": "Terminología clínica por sistemas",
+   "categoria": "Medicina",
+   "paginas": 213,
+   "precio": "$67.400",
+   "portada": "https://cdn.autoreseditores.com/cover_thumb/bigger/000030870.jpeg",
+   "ae": "https://www.autoreseditores.com/libro/30870/ricardo-londono-gonzalez/semiologia-medica-integral.html",
+   "descripcion": "El lenguaje clínico estudiado sistema por sistema, para médicos, estudiantes avanzados y profesionales de la salud."
+  },
+  {
+   "id": "27369",
+   "titulo": "Parasitología aplicada",
+   "subtitulo": "",
+   "categoria": "Medicina",
+   "paginas": 153,
+   "precio": "$49.100",
+   "portada": "https://cdn.autoreseditores.com/cover_thumb/bigger/000027369.jpeg",
+   "ae": "https://www.autoreseditores.com/libro/27369/ricardo-londono-gonzalez/parasitologia-aplicada.html",
+   "descripcion": "Guía de consulta rápida sobre los parásitos más relevantes en la práctica clínica."
+  },
+  {
+   "id": "34589",
+   "titulo": "Patología veterinaria",
+   "subtitulo": "Fundamentos y aplicaciones clínicas",
+   "categoria": "Medicina veterinaria",
+   "paginas": 308,
+   "precio": "$99.000",
+   "portada": "https://cdn.autoreseditores.com/cover_thumb/bigger/000034589.jpeg",
+   "ae": "https://www.autoreseditores.com/libro/34589/ricardo-londono-gonzalez/patologia-veterinaria.html",
+   "descripcion": "Una visión moderna que une la anatomía patológica clásica con la biología molecular, la oncología comparada y el enfoque One Health."
+  },
+  {
+   "id": "27566",
+   "titulo": "Vademécum veterinario",
+   "subtitulo": "Guía general",
+   "categoria": "Medicina veterinaria",
+   "paginas": 271,
+   "precio": "$121.200",
+   "portada": "https://cdn.autoreseditores.com/cover_thumb/bigger/000027566.jpeg",
+   "ae": "https://www.autoreseditores.com/libro/27566/ricardo-londono-gonzalez/vademecum-veterinario.html",
+   "descripcion": "Recurso de referencia que reúne los medicamentos de uso en medicina veterinaria."
+  },
+  {
+   "id": "28819",
+   "titulo": "El sistema urinario en caninos",
+   "subtitulo": "",
+   "categoria": "Medicina veterinaria",
+   "paginas": 175,
+   "precio": "$75.300",
+   "portada": "https://cdn.autoreseditores.com/cover_thumb/bigger/000028819.jpeg",
+   "ae": "https://www.autoreseditores.com/libro/28819/ricardo-londono-gonzalez/el-sistema-urinario-en-caninos.html",
+   "descripcion": "Anatomía, fisiología, diagnóstico y tratamiento de las afecciones urinarias en los perros."
+  },
+  {
+   "id": "29350",
+   "titulo": "Historia de la Iglesia Antigua",
+   "subtitulo": "Libro I",
+   "categoria": "Teología e historia del cristianismo",
+   "paginas": 251,
+   "precio": "$95.300",
+   "portada": "https://cdn.autoreseditores.com/cover_thumb/bigger/000029350.jpeg",
+   "ae": "https://www.autoreseditores.com/libro/29350/ricardo-londono-gonzalez/historia-de-la-iglesia-antigua.html",
+   "descripcion": "Un recorrido por los orígenes de la fe cristiana y los acontecimientos que moldearon la civilización occidental."
+  },
+  {
+   "id": "31474",
+   "titulo": "Historia de la Iglesia Antigua",
+   "subtitulo": "Volumen II",
+   "categoria": "Teología e historia del cristianismo",
+   "paginas": 272,
+   "precio": "$79.700",
+   "portada": "https://cdn.autoreseditores.com/cover_thumb/bigger/000031474.jpeg",
+   "ae": "https://www.autoreseditores.com/libro/31474/ricardo-londono-gonzalez/historia-de-la-iglesia-antigua-volumen-2.html",
+   "descripcion": "Cómo los primeros cristianos organizaron su vida, su teología y su misión, a partir de fuentes primarias y arqueología."
+  },
+  {
+   "id": "34288",
+   "titulo": "Teología fundamental",
+   "subtitulo": "Los cimientos de la teología cristiana",
+   "categoria": "Teología e historia del cristianismo",
+   "paginas": 251,
+   "precio": "$78.100",
+   "portada": "https://cdn.autoreseditores.com/cover_thumb/bigger/000034288.jpeg",
+   "ae": "https://www.autoreseditores.com/libro/34288/ricardo-londono-gonzalez/teologia-fundamental.html",
+   "descripcion": "Fe, razón, revelación e interpretación de las Escrituras en una época de relativismo y escepticismo."
+  },
+  {
+   "id": "33916",
+   "titulo": "Cristianismo bajo ataque",
+   "subtitulo": "La herejía modalista",
+   "categoria": "Teología e historia del cristianismo",
+   "paginas": 283,
+   "precio": "$86.800",
+   "portada": "https://cdn.autoreseditores.com/cover_thumb/bigger/000033916.jpeg",
+   "ae": "https://www.autoreseditores.com/libro/33916/ricardo-londono-gonzalez/cristianismo-bajo-ataque.html",
+   "descripcion": "Una defensa bíblica e histórica de la Trinidad frente a la doctrina unicitaria «Jesús solo»."
+  },
+  {
+   "id": "25534",
+   "titulo": "Los manuscritos sagrados",
+   "subtitulo": "Un viaje épico a través de los siglos",
+   "categoria": "Teología e historia del cristianismo",
+   "paginas": 564,
+   "precio": "$136.900",
+   "portada": "https://cdn.autoreseditores.com/cover_thumb/bigger/000025534.jpeg",
+   "ae": "https://www.autoreseditores.com/libro/25534/ricardo-londono-gonzalez/los-manuscritos-sagrados.html",
+   "descripcion": "De los rollos del mar Muerto a los pergaminos medievales: los textos que dieron forma a la fe y a la historia."
+  },
+  {
+   "id": "23889",
+   "titulo": "Tras las sombras del imperio",
+   "subtitulo": "El enigma de la Donación de Constantino",
+   "categoria": "Teología e historia del cristianismo",
+   "paginas": 131,
+   "precio": "$49.100",
+   "portada": "https://cdn.autoreseditores.com/cover_thumb/bigger/000023889.jpeg",
+   "ae": "https://www.autoreseditores.com/libro/23889/ricardo-londono-gonzalez/tras-las-sombras-del-imperio.html",
+   "descripcion": "La investigación sobre uno de los documentos más famosos y discutidos de la historia de Occidente."
+  },
+  {
+   "id": "22759",
+   "titulo": "Principios de filología bíblica",
+   "subtitulo": "Segunda edición revisada",
+   "categoria": "Teología e historia del cristianismo",
+   "paginas": 206,
+   "precio": "$76.200",
+   "portada": "https://cdn.autoreseditores.com/cover_thumb/bigger/000022759.jpeg",
+   "ae": "https://www.autoreseditores.com/libro/22759/carlos-ricardo-londono-gonzalez/principios-de-filologia-biblica.html",
+   "descripcion": "Los conceptos de la filología y su aplicación práctica para comprender bien los textos bíblicos."
+  },
+  {
+   "id": "26909",
+   "titulo": "Tratado de sociología cristiana fundamental",
+   "subtitulo": "",
+   "categoria": "Teología e historia del cristianismo",
+   "paginas": 256,
+   "precio": "$83.900",
+   "portada": "https://cdn.autoreseditores.com/cover_thumb/bigger/000026909.jpeg",
+   "ae": "https://www.autoreseditores.com/libro/26909/ricardo-londono-gonzalez/tratado-de-sociologia-cristiana-fundamental.html",
+   "descripcion": "Cómo los principios del cristianismo pueden aplicarse para comprender y transformar la sociedad."
+  },
+  {
+   "id": "21629",
+   "titulo": "Costumbres judaizantes en el cristianismo",
+   "subtitulo": "Comentario a Gálatas de Martín Lutero",
+   "categoria": "Teología e historia del cristianismo",
+   "paginas": 75,
+   "precio": "$50.300",
+   "portada": "https://cdn.autoreseditores.com/cover_thumb/bigger/000021629.jpeg",
+   "ae": "https://www.autoreseditores.com/libro/21629/ricardo-londono-gonzalez/costumbres-judaizantes-en-el-cristianismo.html",
+   "descripcion": "Traducción al castellano actual, revisión y comentario del estudio de Lutero sobre la Epístola a los Gálatas."
+  },
+  {
+   "id": "21590",
+   "titulo": "La Confesión de La Rochelle, 1559",
+   "subtitulo": "Traducción, introducción y notas",
+   "categoria": "Teología e historia del cristianismo",
+   "paginas": 40,
+   "precio": "$46.500",
+   "portada": "https://cdn.autoreseditores.com/cover_thumb/bigger/000021590.jpeg",
+   "ae": "https://www.autoreseditores.com/libro/21590/ricardo-londono-gonzalez/la-confesion-de-la-rochelle-1559.html",
+   "descripcion": "La primera confesión de fe de las iglesias reformadas de Francia, traducida y anotada."
+  },
+  {
+   "id": "32319",
+   "titulo": "Después de ti",
+   "subtitulo": "35 días para sanar",
+   "categoria": "Psicología y vida",
+   "paginas": 248,
+   "precio": "$68.800",
+   "portada": "https://cdn.autoreseditores.com/cover_thumb/bigger/000032319.jpeg",
+   "ae": "https://www.autoreseditores.com/libro/32319/ricardo-londono-gonzalez/despues-de-ti.html",
+   "descripcion": "Un viaje literario y psicológico al corazón de las relaciones fracturadas y al camino para sanar."
+  },
+  {
+   "id": "34107",
+   "titulo": "Inquebrantables",
+   "subtitulo": "",
+   "categoria": "Psicología y vida",
+   "paginas": 221,
+   "precio": "$68.300",
+   "portada": "https://cdn.autoreseditores.com/cover_thumb/bigger/000034107.jpeg",
+   "ae": "https://www.autoreseditores.com/libro/34107/ricardo-londono-gonzalez/inquebrantables.html",
+   "descripcion": "Un libro para fortalecerse ante la adversidad."
+  },
+  {
+   "id": "32518",
+   "titulo": "Operación Causa Justa",
+   "subtitulo": "",
+   "categoria": "Novela",
+   "paginas": 240,
+   "precio": "$76.300",
+   "portada": "https://cdn.autoreseditores.com/cover_thumb/bigger/000032518.jpeg",
+   "ae": "https://www.autoreseditores.com/libro/32518/ricardo-londono-gonzalez/operacion-causa-justa.html",
+   "descripcion": "Thriller político y militar ambientado en la Venezuela de 1997 a 2025."
+  }
+ ],
+ "proximos": [
+  {
+   "titulo": "Fábulas",
+   "autor": "Esopo",
+   "categoria": "Infantil y juvenil"
+  },
+  {
+   "titulo": "Cuentos pintados",
+   "autor": "Rafael Pombo",
+   "categoria": "Infantil y juvenil"
+  },
+  {
+   "titulo": "Las aventuras de Pinocho",
+   "autor": "Carlo Collodi",
+   "categoria": "Infantil y juvenil"
+  },
+  {
+   "titulo": "Alicia en el país de las maravillas",
+   "autor": "Lewis Carroll",
+   "categoria": "Infantil y juvenil"
+  },
+  {
+   "titulo": "La isla del tesoro",
+   "autor": "Robert Louis Stevenson",
+   "categoria": "Novela"
+  },
+  {
+   "titulo": "Veinte mil leguas de viaje submarino",
+   "autor": "Julio Verne",
+   "categoria": "Novela"
+  },
+  {
+   "titulo": "María",
+   "autor": "Jorge Isaacs",
+   "categoria": "Novela"
+  },
+  {
+   "titulo": "Notas sobre enfermería",
+   "autor": "Florence Nightingale",
+   "categoria": "Ciencia y salud"
+  },
+  {
+   "titulo": "El origen de las especies",
+   "autor": "Charles Darwin",
+   "categoria": "Ciencia y salud"
+  },
+  {
+   "titulo": "Principios de la administración científica",
+   "autor": "Frederick W. Taylor",
+   "categoria": "Administración y emprendimiento"
+  },
+  {
+   "titulo": "Autobiografía",
+   "autor": "Benjamin Franklin",
+   "categoria": "Administración y emprendimiento"
+  },
+  {
+   "titulo": "¡Ayúdate!",
+   "autor": "Samuel Smiles",
+   "categoria": "Administración y emprendimiento"
+  },
+  {
+   "titulo": "Meditaciones",
+   "autor": "Marco Aurelio",
+   "categoria": "Filosofía"
+  },
+  {
+   "titulo": "Cartas a Lucilio",
+   "autor": "Séneca",
+   "categoria": "Filosofía"
+  },
+  {
+   "titulo": "El arte de la guerra",
+   "autor": "Sun Tzu",
+   "categoria": "Filosofía"
+  }
+ ]
 }
