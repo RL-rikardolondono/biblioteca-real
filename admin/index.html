@@ -1,0 +1,493 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex, nofollow">
+<title>Panel · Biblioteca Real</title>
+
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@600;700&family=Public+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+:root{--azul:#0B4F8A;--azul2:#1867B0;--verde:#14A38B;--verde-osc:#0E8571;--wa:#1F8A4C;--fondo:#F4F8FB;--texto:#1C2B39;--suave:#5D6B78;--borde:#DCE5EE;--azul-claro:#E8F1FA;--verde-claro:#E3F6F2;--rojo:#C0392B;--rojo-claro:#FDECEA}
+*{box-sizing:border-box}
+body{margin:0;background:var(--fondo);color:var(--texto);font-family:'Public Sans',system-ui,sans-serif;font-size:16px;line-height:1.55}
+h1,h2,h3{font-family:'Barlow Condensed',system-ui,sans-serif;margin:0 0 .4em;line-height:1.15}
+h1{font-size:2rem}h2{font-size:1.6rem}h3{font-size:1.25rem}
+a{color:var(--azul2)}
+.oculto{display:none!important}
+.barra{background:#fff;box-shadow:0 2px 12px rgba(28,43,57,.08);position:sticky;top:0;z-index:20}
+.barra__in{max-width:1100px;margin:0 auto;padding:0 16px;height:64px;display:flex;align-items:center;justify-content:space-between;gap:12px}
+.marca{display:flex;align-items:center;gap:10px;font-family:'Barlow Condensed',system-ui,sans-serif;font-weight:700;font-size:1.2rem}
+.marca svg{width:36px;height:36px;flex:none}
+.marca small{display:block;font-family:'Public Sans',system-ui,sans-serif;font-weight:500;font-size:.75rem;color:var(--suave)}
+.acciones-barra{display:flex;gap:8px;flex-wrap:wrap}
+main{max-width:1100px;margin:0 auto;padding:24px 16px 60px}
+.caja{background:#fff;border:1px solid var(--borde);border-radius:14px;padding:22px;box-shadow:0 2px 14px rgba(11,79,138,.06);margin-bottom:18px}
+.boton{display:inline-flex;align-items:center;justify-content:center;gap:6px;padding:10px 16px;border-radius:10px;border:0;font:inherit;font-weight:600;cursor:pointer;text-decoration:none;white-space:nowrap}
+.boton:disabled{opacity:.55;cursor:not-allowed}
+.b-principal{background:var(--azul);color:#fff}.b-principal:hover{background:var(--azul2)}
+.b-accion{background:var(--verde);color:#fff}.b-accion:hover{background:var(--verde-osc)}
+.b-borde{background:#fff;color:var(--azul);border:1.5px solid var(--borde)}.b-borde:hover{border-color:var(--azul2)}
+.b-peligro{background:#fff;color:var(--rojo);border:1.5px solid #f1c6c0}.b-peligro:hover{background:var(--rojo-claro)}
+.b-chico{padding:6px 11px;font-size:.88rem}
+.b-grande{padding:14px 24px;font-size:1.05rem}
+label{display:block;font-weight:600;margin:14px 0 6px}
+.ayuda{font-weight:400;color:var(--suave);font-size:.88rem;margin-top:4px}
+input[type=text],input[type=url],input[type=email],input[type=date],input[type=password],input[type=tel],select,textarea{width:100%;padding:11px 12px;border:1.5px solid var(--borde);border-radius:10px;font:inherit;background:#fff;color:var(--texto)}
+input:focus,select:focus,textarea:focus{outline:none;border-color:var(--verde);box-shadow:0 0 0 3px var(--verde-claro)}
+textarea{min-height:240px;resize:vertical;line-height:1.6}
+.fila{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+@media(max-width:700px){.fila{grid-template-columns:1fr}}
+.pestanas{display:flex;gap:6px;flex-wrap:wrap;margin-bottom:18px}
+.pestana{background:#fff;border:1.5px solid var(--borde);padding:10px 16px;border-radius:10px;font:inherit;font-weight:600;cursor:pointer;color:var(--texto)}
+.pestana[aria-selected=true]{background:var(--verde);border-color:var(--verde);color:#fff}
+.lista{display:flex;flex-direction:column;gap:10px}
+.item{display:flex;gap:14px;align-items:center;background:#fff;border:1px solid var(--borde);border-radius:12px;padding:10px}
+.item img{width:84px;height:62px;object-fit:cover;border-radius:8px;background:var(--azul-claro);flex:none}
+.item.libro img{width:46px;height:68px}
+.item__txt{flex:1;min-width:0}
+.item__txt b{display:block;overflow:hidden;text-overflow:ellipsis}
+.item__txt span{color:var(--suave);font-size:.88rem}
+.item__btn{display:flex;gap:6px;flex-wrap:wrap;justify-content:flex-end}
+@media(max-width:600px){.item{flex-wrap:wrap}.item__btn{width:100%;justify-content:flex-start}}
+.fotos{display:grid;grid-template-columns:repeat(auto-fill,minmax(150px,1fr));gap:12px;margin-top:10px}
+.foto{border:2px solid var(--borde);border-radius:12px;overflow:hidden;background:#fff;display:flex;flex-direction:column}
+.foto.portada{border-color:var(--verde)}
+.foto img{width:100%;aspect-ratio:4/3;object-fit:cover}
+.foto div{display:flex;flex-direction:column;gap:4px;padding:6px}
+.foto .marca-portada{background:var(--verde);color:#fff;font-size:.78rem;font-weight:700;text-align:center;padding:3px}
+.subir{border:2px dashed var(--borde);border-radius:12px;padding:18px;text-align:center;background:var(--azul-claro);cursor:pointer;color:var(--azul);font-weight:600}
+.subir:hover{border-color:var(--azul2)}
+.herramientas{display:flex;gap:6px;flex-wrap:wrap;margin-bottom:6px}
+.aviso{padding:12px 14px;border-radius:10px;margin:12px 0;font-weight:500}
+.aviso.ok{background:var(--verde-claro);color:var(--verde-osc)}
+.aviso.error{background:var(--rojo-claro);color:var(--rojo)}
+.aviso.info{background:var(--azul-claro);color:var(--azul)}
+.pie-acciones{display:flex;gap:10px;flex-wrap:wrap;justify-content:flex-end;margin-top:20px;padding-top:16px;border-top:1px solid var(--borde)}
+.cargando{position:fixed;inset:0;background:rgba(244,248,251,.88);display:flex;align-items:center;justify-content:center;flex-direction:column;gap:14px;z-index:100;font-weight:600;color:var(--azul);text-align:center;padding:20px}
+.rueda{width:46px;height:46px;border:5px solid var(--azul-claro);border-top-color:var(--verde);border-radius:50%;animation:g 1s linear infinite}
+@keyframes g{to{transform:rotate(360deg)}}
+.pasos{padding-left:22px}.pasos li{margin-bottom:8px}
+.ingreso{max-width:520px;margin:40px auto}
+.proyecto-fila{display:grid;grid-template-columns:1fr 1.4fr 1fr auto;gap:8px;margin-bottom:8px;align-items:center}
+@media(max-width:700px){.proyecto-fila{grid-template-columns:1fr}}
+.cifra-fila{display:grid;grid-template-columns:.6fr 1.4fr;gap:8px;margin-bottom:8px}
+.firma{text-align:center;color:var(--suave);font-size:.82rem;padding:20px 16px 30px}
+.firma svg{width:18px;height:18px;vertical-align:-4px}
+.chk{display:flex;gap:8px;align-items:center;font-weight:500;margin-top:12px}
+.chk input{width:18px;height:18px}
+.cab-lista{display:flex;justify-content:space-between;align-items:center;gap:12px;flex-wrap:wrap}
+.testimonio-fila{display:grid;gap:8px;margin-bottom:14px;padding-bottom:14px;border-bottom:1px solid var(--borde)}
+.testimonio-fila .boton{justify-self:start}
+input[type=number]{font:inherit}
+</style>
+</head>
+<body>
+<header class="barra"><div class="barra__in">
+  <div class="marca"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200" aria-hidden="true"><rect x="4" y="4" width="192" height="192" rx="46" fill="#0B4F8A"/><g stroke="#FFFFFF" stroke-linecap="round"><polygon points="100,42 150.2,71 150.2,129 100,158 49.8,129 49.8,71" fill="none" stroke-opacity=".35" stroke-width="4"/><path d="M100 100L100 42M100 100L150.2 71M100 100L150.2 129M100 100L100 158M100 100L49.8 129M100 100L49.8 71" stroke-width="6"/></g><g fill="#FFFFFF"><circle cx="150.2" cy="71" r="10"/><circle cx="150.2" cy="129" r="10"/><circle cx="100" cy="158" r="10"/><circle cx="49.8" cy="129" r="10"/><circle cx="49.8" cy="71" r="10"/></g><circle cx="100" cy="42" r="13" fill="#E0A21A"/><circle cx="100" cy="100" r="20" fill="#E0A21A"/></svg>
+    <div>Panel de la web<small id="nombre-sitio"></small></div></div>
+  <div class="acciones-barra oculto" id="acciones-barra">
+    <a class="boton b-borde b-chico" href="../" target="_blank" rel="noopener">Ver la web</a>
+    <button class="boton b-borde b-chico" type="button" id="btn-salir">Salir</button>
+  </div>
+</div></header>
+
+<main>
+  <!-- INGRESO -->
+  <section id="vista-ingreso" class="ingreso">
+    <div class="caja" id="caja-entrar">
+      <h1>Entrar al panel</h1>
+      <p>Entre con su correo y su contraseña del panel.</p>
+      <label for="ing-correo">Correo</label>
+      <input type="email" id="ing-correo" autocomplete="username">
+      <label for="ing-clave">Contraseña</label>
+      <input type="password" id="ing-clave" autocomplete="current-password">
+      <label class="chk"><input type="checkbox" id="recordar" checked> Recordar en este equipo (no lo marque en computadores ajenos)</label>
+      <div id="aviso-ingreso"></div>
+      <div class="pie-acciones"><button class="boton b-principal b-grande" id="btn-entrar" type="button">Entrar</button></div>
+      <p class="ayuda" style="margin-top:14px"><a href="#" id="btn-olvido">¿Olvidó su contraseña?</a> · <a href="#" id="btn-primera">¿Primera vez? Crear mi contraseña</a></p>
+      <p class="ayuda">Soporte: SkyNet Genesis · contacto@skynetgenesis.com · WhatsApp 3044375758</p>
+    </div>
+
+    <div class="caja oculto" id="caja-nueva">
+      <h1>Crear nueva contraseña</h1>
+      <p>Escriba su nueva contraseña del panel (mínimo 8 caracteres).</p>
+      <label for="nueva-clave">Nueva contraseña</label>
+      <input type="password" id="nueva-clave" autocomplete="new-password">
+      <label for="nueva-clave2">Repita la contraseña</label>
+      <input type="password" id="nueva-clave2" autocomplete="new-password">
+      <div id="aviso-nueva"></div>
+      <div class="pie-acciones"><button class="boton b-principal b-grande" id="btn-clave-nueva" type="button">Guardar y entrar</button></div>
+    </div>
+
+    <div class="caja oculto" id="caja-llave">
+      <h1>Configuración inicial (solo una vez)</h1>
+      <p>Para que el panel pueda publicar en la web, GitHub necesita una llave de acceso. Se pega <b>una sola vez</b>: queda guardada de forma segura en el servidor y nadie tendrá que volver a verla.</p>
+      <ol class="pasos">
+        <li>Inicie sesión en GitHub y abra <a href="https://github.com/settings/personal-access-tokens/new" target="_blank" rel="noopener">esta página</a>.</li>
+        <li>En <b>Token name</b> escriba: <i>Panel Biblioteca Real</i>. En <b>Expiration</b> elija <b>No expiration</b>.</li>
+        <li>En <b>Repository access</b> elija <b>Only select repositories</b> y marque solo <b>biblioteca-real</b>.</li>
+        <li>En <b>Permissions → Repository permissions</b>, ponga <b>Contents</b> en <b>Read and write</b>. Nada más.</li>
+        <li>Pulse <b>Generate token</b>, copie la llave (empieza por <code>github_pat_</code>) y péguela aquí abajo.</li>
+      </ol>
+      <label for="llave">Llave de GitHub</label>
+      <input type="password" id="llave" autocomplete="off" placeholder="github_pat_…">
+      <div id="aviso-llave"></div>
+      <div class="pie-acciones"><button class="boton b-principal b-grande" id="btn-llave" type="button">Guardar y entrar</button></div>
+    </div>
+  </section>
+
+  <!-- PANEL -->
+  <section id="vista-panel" class="oculto">
+    <div class="pestanas">
+      <button class="pestana" data-pestana="libros" aria-selected="true" type="button">Libros</button>
+      <button class="pestana" data-pestana="sitio" aria-selected="false" type="button">Portada y fundador</button>
+    </div>
+    <div id="aviso-panel"></div>
+
+    <div data-panel="libros">
+      <div class="caja">
+        <div class="cab-lista"><h2>Libros de la Biblioteca Real</h2><button class="boton b-accion" type="button" id="btn-nuevo">+ Agregar libro</button></div>
+        <p class="ayuda">Para cambiar un libro pulse «Editar». Los cambios se ven en la web 1 o 2 minutos después de publicar.</p>
+        <div class="lista" id="lista-libros"></div>
+      </div>
+    </div>
+
+    <div data-panel="editor" class="oculto">
+      <div class="caja">
+        <h2 id="ed-titulo">Libro</h2>
+        <div class="fila">
+          <div><label for="ed-tit">Título</label><input type="text" id="ed-tit"></div>
+          <div><label for="ed-aut">Autor</label><input type="text" id="ed-aut"></div>
+        </div>
+        <div class="fila">
+          <div><label for="ed-num">Número en la colección</label><input type="number" id="ed-num" min="1"></div>
+          <div><label for="ed-cat">Categoría</label><input type="text" id="ed-cat" list="cats"><datalist id="cats"></datalist><p class="ayuda">Ej.: Novela, Poesía, Ensayo, Teatro, Ciencia.</p></div>
+        </div>
+        <div class="fila">
+          <div><label for="ed-epoca">Época</label><input type="text" id="ed-epoca" placeholder="Siglo XIX"></div>
+          <div><label for="ed-pag">Páginas</label><input type="number" id="ed-pag" min="1"></div>
+        </div>
+        <label for="ed-desc">Descripción (2 o 3 líneas)</label>
+        <textarea id="ed-desc" style="min-height:110px"></textarea>
+        <div class="fila">
+          <div><label>Portada (JPG o PNG)</label><input type="file" id="ed-portada" accept="image/*"><p class="ayuda" id="ed-portada-info"></p></div>
+          <div><label>Libro en PDF</label><input type="file" id="ed-pdf" accept="application/pdf"><p class="ayuda" id="ed-pdf-info"></p></div>
+        </div>
+        <label>Libro en EPUB (opcional)</label><input type="file" id="ed-epub" accept=".epub,application/epub+zip"><p class="ayuda" id="ed-epub-info"></p>
+        <div id="aviso-editor"></div>
+        <div class="pie-acciones">
+          <button class="boton b-borde" type="button" id="ed-cancelar">Cancelar</button>
+          <button class="boton b-principal b-grande" type="button" id="ed-publicar">Publicar</button>
+        </div>
+      </div>
+    </div>
+
+    <div data-panel="sitio" class="oculto">
+      <div class="caja">
+        <h2>Portada y fundador</h2>
+        <label for="s-lema">Lema</label><input type="text" id="s-lema">
+        <label for="s-pres">Presentación (debajo del lema)</label><textarea id="s-pres" style="min-height:90px"></textarea>
+        <label for="s-nombre">Nombre del fundador</label><input type="text" id="s-nombre">
+        <label for="s-bio">Biografía (deje una línea en blanco entre párrafos)</label><textarea id="s-bio"></textarea>
+        <label>Foto del fundador</label><input type="file" id="s-foto" accept="image/*"><p class="ayuda">Si no elige una foto nueva, se conserva la actual.</p>
+        <label for="s-correo">Correo de contacto para instituciones</label><input type="email" id="s-correo">
+        <div id="aviso-sitio"></div>
+        <div class="pie-acciones"><button class="boton b-principal b-grande" type="button" id="s-publicar">Publicar</button></div>
+      </div>
+    </div>
+  </section>
+</main>
+<p class="firma">Panel desarrollado por SkyNet Genesis · contacto@skynetgenesis.com · WhatsApp 3044375758</p>
+<div class="cargando oculto" id="cargando"><div class="rueda"></div><div id="cargando-texto">Cargando…</div></div>
+<script>
+/* ===== Configuración de esta web (cambiar solo esto al copiar el panel a otra web) ===== */
+var CONFIG = {
+  dueno: 'RL-rikardolondono',            // usuario de GitHub
+  repo: 'biblioteca-real',     // repositorio de la web
+  rama: 'main',
+  sitio: 'biblioteca.fundacionreinaelizabeth.com',
+  claveLocal: 'panel-biblioteca-sesion',
+  claveLocalVieja: 'panel-biblioteca-llave',
+  sitioId: 'biblioteca',                         // nombre de esta web en el servicio de ingreso
+  correo: 'rikardolondono@gmail.com',           // correo que entra al panel
+  ingreso: 'https://skynetgenesis.com/ingreso/api.php'   // servicio central de ingreso de SkyNet Genesis
+};
+/* ======================================================================================= */
+
+var API = 'https://api.github.com/repos/' + CONFIG.dueno + '/' + CONFIG.repo;
+var estado = { llave: '', cat: null, commitBase: '', cambiosSinGuardar: false };
+var nuevasImagenes = {};   // ruta -> dataURL (pendientes de subir)
+var borrarRutas = [];      // rutas a borrar en el próximo guardado (si ya no se usan)
+var pendientesGeneral = {};
+
+function $(id) { return document.getElementById(id); }
+function aviso(id, tipo, txt) { var el = $(id); el.innerHTML = ''; if (!txt) return; var d = document.createElement('div'); d.className = 'aviso ' + tipo; d.textContent = txt; el.appendChild(d); if (tipo !== 'info') d.scrollIntoView({ behavior: 'smooth', block: 'center' }); }
+function cargando(on, txt) { $('cargando').classList.toggle('oculto', !on); $('cargando-texto').textContent = txt || 'Cargando…'; }
+function leerLS(k) { try { return localStorage.getItem(k) || sessionStorage.getItem(k) || ''; } catch (e) { return ''; } }
+function guardarLS(k, v, recordar) { try { (recordar ? localStorage : sessionStorage).setItem(k, v); } catch (e) {} }
+function borrarLS(k) { try { localStorage.removeItem(k); sessionStorage.removeItem(k); } catch (e) {} }
+function clonar(o) { return JSON.parse(JSON.stringify(o)); }
+function boton(txt, clases, fn) { var b = document.createElement('button'); b.type = 'button'; b.className = 'boton ' + clases; b.textContent = txt; b.onclick = fn; return b; }
+
+$('nombre-sitio').textContent = CONFIG.sitio;
+
+/* ---------- GitHub ---------- */
+function gh(ruta, op) {
+  op = op || {};
+  var h = { 'Authorization': 'Bearer ' + estado.llave, 'Accept': op.accept || 'application/vnd.github+json', 'X-GitHub-Api-Version': '2022-11-28' };
+  if (op.body) h['Content-Type'] = 'application/json';
+  return fetch(ruta.indexOf('http') === 0 ? ruta : API + ruta, { method: op.method || 'GET', headers: h, body: op.body ? JSON.stringify(op.body) : undefined, cache: 'no-store' })
+    .then(function (r) {
+      if (op.accept === 'application/vnd.github.raw') return r.ok ? r.text() : r.text().then(function (t) { throw errorGH(r.status, t); });
+      return r.text().then(function (t) { var j = t ? JSON.parse(t) : {}; if (!r.ok) throw errorGH(r.status, j.message || t); return j; });
+    }, function () { throw errorGH(0); });
+}
+function errorGH(st, msg) {
+  var e = new Error(msg); e.status = st;
+  if (st === 401) e.message = 'La llave no es válida o ya venció. Cree una nueva en GitHub y vuelva a entrar.';
+  else if (st === 403) e.message = 'La llave no tiene permiso para escribir en esta web. Revise que tenga «Contents: Read and write» sobre el repositorio ' + CONFIG.repo + '.';
+  else if (st === 404) e.message = 'No se encontró el repositorio ' + CONFIG.repo + ' con esta llave. Revise que la llave tenga acceso a ese repositorio.';
+  else if (!st) e.message = 'No hay conexión a internet. Intente de nuevo.';
+  return e;
+}
+function leerArchivo(ruta) { return gh('/contents/' + ruta + '?ref=' + CONFIG.rama, { accept: 'application/vnd.github.raw' }); }
+function refActual() { return gh('/git/ref/heads/' + CONFIG.rama).then(function (r) { return r.object.sha; }); }
+
+// Sube en UN solo cambio: páginas, imágenes nuevas y archivos a borrar.
+function confirmarCambios(textos, imagenes, borrar, mensaje) {
+  var base, arbolBase;
+  return refActual().then(function (sha) {
+    if (estado.commitBase && sha !== estado.commitBase) {
+      var e = new Error('La web fue modificada desde otro lugar mientras usted trabajaba. Pulse «Recargar» para traer la versión más reciente (copie antes su texto si no quiere perderlo).');
+      e.recargar = true; throw e;
+    }
+    base = sha;
+    return gh('/git/commits/' + sha);
+  }).then(function (c) {
+    arbolBase = c.tree.sha;
+    var rutas = Object.keys(imagenes);
+    return rutas.reduce(function (p, ruta, i) {
+      return p.then(function (acc) {
+        cargando(true, 'Subiendo archivo ' + (i + 1) + ' de ' + rutas.length + '…');
+        return gh('/git/blobs', { method: 'POST', body: { content: imagenes[ruta].split(',')[1], encoding: 'base64' } })
+          .then(function (b) { acc.push({ path: ruta.replace(/^\//, ''), mode: '100644', type: 'blob', sha: b.sha }); return acc; });
+      });
+    }, Promise.resolve([]));
+  }).then(function (arbol) {
+    cargando(true, 'Publicando…');
+    Object.keys(textos).forEach(function (ruta) { arbol.push({ path: ruta, mode: '100644', type: 'blob', content: textos[ruta] }); });
+    borrar.forEach(function (ruta) { arbol.push({ path: ruta.replace(/^\//, ''), mode: '100644', type: 'blob', sha: null }); });
+    return gh('/git/trees', { method: 'POST', body: { base_tree: arbolBase, tree: arbol } });
+  }).then(function (t) {
+    return gh('/git/commits', { method: 'POST', body: { message: mensaje, tree: t.sha, parents: [base] } });
+  }).then(function (c) {
+    return gh('/git/refs/heads/' + CONFIG.rama, { method: 'PATCH', body: { sha: c.sha } }).then(function () { estado.commitBase = c.sha; return c; });
+  });
+}
+
+/* ---------- Ingreso (correo y contraseña por el servicio central de SkyNet Genesis) ---------- */
+function api(accion, datos) {
+  datos = datos || {}; datos.sitio = CONFIG.sitioId; datos.accion = accion;
+  return fetch(CONFIG.ingreso + '?sitio=' + encodeURIComponent(CONFIG.sitioId), { method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify(datos), cache: 'no-store' })
+    .then(function (r) { return r.json().catch(function () { return {}; }).then(function (j) { if (!r.ok || !j.ok) { var e = new Error(j.error || 'No se pudo conectar con el servicio de ingreso. Intente de nuevo.'); e.status = r.status; throw e; } return j; }); },
+          function () { throw new Error('No hay conexión a internet. Intente de nuevo.'); });
+}
+function verCaja(id) { ['caja-entrar', 'caja-nueva', 'caja-llave'].forEach(function (c) { $(c).classList.toggle('oculto', c !== id); }); $('vista-ingreso').classList.remove('oculto'); }
+function guardarSesion(s, recordar) { borrarLS(CONFIG.claveLocal); guardarLS(CONFIG.claveLocal, s, recordar); }
+function trasIngreso(r) {
+  if (!r.configurado || !r.llave) { cargando(false); verCaja('caja-llave'); return; }
+  cargarPanel(r.llave);
+}
+function cargarPanel(llave) {
+  estado.llave = llave;
+  cargando(true, 'Entrando…');
+  gh('').then(function (repo) {
+    if (repo.permissions && !repo.permissions.push) throw errorGH(403);
+    return Promise.all([refActual(), leerArchivo('catalogo.json')]);
+  }).then(function (r) {
+    estado.commitBase = r[0];
+    estado.cat = JSON.parse(r[1]);
+    $('vista-ingreso').classList.add('oculto'); $('vista-panel').classList.remove('oculto'); $('acciones-barra').classList.remove('oculto');
+    cargando(false); pintarLibros(); pintarSitio();
+  }).catch(function (e) {
+    cargando(false); estado.llave = '';
+    if (e.status === 401 || e.status === 403 || e.status === 404) { verCaja('caja-llave'); aviso('aviso-llave', 'error', 'La llave de GitHub guardada ya no funciona (' + e.message + ') Cree una nueva y péguela aquí.'); return; }
+    verCaja('caja-entrar'); aviso('aviso-ingreso', 'error', e.message);
+  });
+}
+$('ing-correo').value = CONFIG.correo;
+$('btn-entrar').onclick = function () {
+  var correo = $('ing-correo').value.trim(), clave = $('ing-clave').value, recordar = $('recordar').checked;
+  if (!correo || !clave) { aviso('aviso-ingreso', 'error', 'Escriba su correo y su contraseña.'); return; }
+  cargando(true, 'Entrando…'); aviso('aviso-ingreso', '', '');
+  api('entrar', { correo: correo, clave: clave, recordar: recordar }).then(function (r) {
+    $('ing-clave').value = ''; guardarSesion(r.sesion, recordar); trasIngreso(r);
+  }).catch(function (e) { cargando(false); aviso('aviso-ingreso', 'error', e.message); });
+};
+$('ing-clave').addEventListener('keydown', function (e) { if (e.key === 'Enter') $('btn-entrar').click(); });
+function pedirEnlace(ev) {
+  ev.preventDefault();
+  var correo = $('ing-correo').value.trim();
+  if (!correo) { aviso('aviso-ingreso', 'error', 'Escriba primero su correo.'); return; }
+  cargando(true, 'Enviando el correo…');
+  api('solicitar', { correo: correo }).then(function () {
+    cargando(false);
+    aviso('aviso-ingreso', 'ok', 'Listo. Si ese correo tiene acceso al panel, le llegará en unos minutos un mensaje con un enlace para crear su contraseña. Revise también la carpeta de spam. El enlace vence en 1 hora.');
+  }).catch(function (e) { cargando(false); aviso('aviso-ingreso', 'error', e.message); });
+}
+$('btn-olvido').onclick = pedirEnlace;
+$('btn-primera').onclick = pedirEnlace;
+$('btn-clave-nueva').onclick = function () {
+  var c1 = $('nueva-clave').value, c2 = $('nueva-clave2').value;
+  if (c1.length < 8) { aviso('aviso-nueva', 'error', 'La contraseña debe tener al menos 8 caracteres.'); return; }
+  if (c1 !== c2) { aviso('aviso-nueva', 'error', 'Las dos contraseñas no coinciden.'); return; }
+  var codigo = (location.hash.match(/clave=([a-f0-9]+)/) || [])[1] || '';
+  cargando(true, 'Guardando…');
+  api('fijar', { codigo: codigo, clave: c1, recordar: true }).then(function (r) {
+    history.replaceState(null, '', location.pathname);
+    $('nueva-clave').value = $('nueva-clave2').value = '';
+    guardarSesion(r.sesion, true); trasIngreso(r);
+  }).catch(function (e) { cargando(false); aviso('aviso-nueva', 'error', e.message); });
+};
+$('btn-llave').onclick = function () {
+  var llave = $('llave').value.trim();
+  if (!/^(github_pat_|ghp_)/.test(llave)) { aviso('aviso-llave', 'error', 'Eso no parece una llave de GitHub. Debe empezar por «github_pat_».'); return; }
+  cargando(true, 'Comprobando la llave…');
+  api('guardar_llave', { sesion: leerLS(CONFIG.claveLocal), llave: llave }).then(function (r) {
+    $('llave').value = ''; cargarPanel(r.llave);
+  }).catch(function (e) {
+    cargando(false);
+    if (e.status === 401) { borrarLS(CONFIG.claveLocal); verCaja('caja-entrar'); aviso('aviso-ingreso', 'error', e.message); return; }
+    aviso('aviso-llave', 'error', e.message);
+  });
+};
+$('btn-salir').onclick = function () {
+  if (estado.cambiosSinGuardar && !confirm('Tiene cambios sin publicar. ¿Salir de todos modos?')) return;
+  var s = leerLS(CONFIG.claveLocal); borrarLS(CONFIG.claveLocal); estado.cambiosSinGuardar = false;
+  (s ? api('salir', { sesion: s }).catch(function () {}) : Promise.resolve()).then(function () { location.reload(); });
+};
+window.addEventListener('beforeunload', function (e) { if (estado.cambiosSinGuardar) { e.preventDefault(); e.returnValue = ''; } });
+(function () {
+  window.addEventListener('hashchange', function () { if (/clave=[a-f0-9]+/.test(location.hash)) { $('vista-panel').classList.add('oculto'); $('acciones-barra').classList.add('oculto'); verCaja('caja-nueva'); } });
+  borrarLS(CONFIG.claveLocalVieja); // limpia la llave que antes se guardaba en el equipo
+  if (/clave=[a-f0-9]+/.test(location.hash)) { verCaja('caja-nueva'); return; }
+  var s = leerLS(CONFIG.claveLocal);
+  if (!s) { verCaja('caja-entrar'); return; }
+  cargando(true, 'Entrando…');
+  api('sesion', { sesion: s }).then(trasIngreso).catch(function (e) {
+    cargando(false); if (e.status === 401) borrarLS(CONFIG.claveLocal);
+    verCaja('caja-entrar'); if (e.status !== 401) aviso('aviso-ingreso', 'error', e.message);
+  });
+})();
+
+/* ---------- Biblioteca: pestañas, libros y portada ---------- */
+function verPanel(n) {
+  document.querySelectorAll('[data-panel]').forEach(function (p) { p.classList.toggle('oculto', p.getAttribute('data-panel') !== n); });
+  document.querySelectorAll('.pestana').forEach(function (b) { var k = b.getAttribute('data-pestana'); b.setAttribute('aria-selected', (k === n || (n === 'editor' && k === 'libros')) ? 'true' : 'false'); });
+  window.scrollTo(0, 0);
+}
+document.querySelectorAll('.pestana').forEach(function (b) { b.onclick = function () { verPanel(b.getAttribute('data-pestana')); }; });
+function slugDe(t) { return (t || '').toLowerCase().normalize('NFD').replace(/[̀-ͯ]/g, '').replace(/[^a-z0-9]+/g, '-').replace(/^-|-$/g, '').slice(0, 60); }
+function leerComo(file) { return new Promise(function (ok, no) { var r = new FileReader(); r.onload = function () { ok(r.result); }; r.onerror = no; r.readAsDataURL(file); }); }
+function reducir(file, max, calidad) {
+  return leerComo(file).then(function (url) { return new Promise(function (ok) {
+    var im = new Image(); im.onload = function () {
+      var k = Math.min(1, max / Math.max(im.width, im.height)), c = document.createElement('canvas');
+      c.width = Math.round(im.width * k); c.height = Math.round(im.height * k);
+      c.getContext('2d').drawImage(im, 0, 0, c.width, c.height); ok(c.toDataURL('image/jpeg', calidad || .86));
+    }; im.src = url; }); });
+}
+var editando = null;
+function libros() { return estado.cat.libros || (estado.cat.libros = []); }
+function pintarLibros() {
+  var cont = $('lista-libros'); cont.innerHTML = '';
+  libros().slice().sort(function (a, b) { return a.numero - b.numero; }).forEach(function (l) {
+    var d = document.createElement('div'); d.className = 'item libro';
+    var im = document.createElement('img'); im.src = '../libros/' + l.slug + '/portada.jpg?t=' + Date.now(); im.alt = '';
+    var t = document.createElement('div'); t.className = 'item__txt';
+    var b = document.createElement('b'); b.textContent = 'N.º ' + l.numero + ' · ' + l.titulo;
+    var s = document.createElement('span'); s.textContent = l.autor + ' · ' + (l.categoria || '');
+    t.appendChild(b); t.appendChild(s);
+    var bt = document.createElement('div'); bt.className = 'item__btn';
+    bt.appendChild(boton('Editar', 'b-borde b-chico', function () { abrirEditor(l); }));
+    bt.appendChild(boton('Eliminar', 'b-peligro b-chico', function () { eliminar(l); }));
+    d.appendChild(im); d.appendChild(t); d.appendChild(bt); cont.appendChild(d);
+  });
+  var cats = {}; libros().forEach(function (l) { if (l.categoria) cats[l.categoria] = 1; });
+  $('cats').innerHTML = Object.keys(cats).map(function (c) { return '<option value="' + c.replace(/"/g, '') + '">'; }).join('');
+}
+function abrirEditor(l) {
+  editando = l || null;
+  $('ed-titulo').textContent = l ? 'Editar: ' + l.titulo : 'Agregar un libro';
+  $('ed-tit').value = l ? l.titulo : ''; $('ed-aut').value = l ? l.autor : '';
+  $('ed-num').value = l ? l.numero : (libros().reduce(function (m, x) { return Math.max(m, x.numero || 0); }, 0) + 1);
+  $('ed-cat').value = l ? (l.categoria || '') : ''; $('ed-epoca').value = l ? (l.epoca || '') : '';
+  $('ed-pag').value = l ? (l.paginas || '') : ''; $('ed-desc').value = l ? (l.descripcion || '') : '';
+  ['ed-portada', 'ed-pdf', 'ed-epub'].forEach(function (i) { $(i).value = ''; });
+  $('ed-portada-info').textContent = l ? 'Si no elige un archivo, se conserva la portada actual.' : 'Obligatoria.';
+  $('ed-pdf-info').textContent = l ? 'Si no elige un archivo, se conserva el PDF actual.' : 'Obligatorio.';
+  $('ed-epub-info').textContent = l ? 'Si no elige un archivo, se conserva el EPUB actual (si lo hay).' : '';
+  aviso('aviso-editor', '', ''); verPanel('editor');
+}
+$('btn-nuevo').onclick = function () { abrirEditor(null); };
+$('ed-cancelar').onclick = function () { verPanel('libros'); };
+$('ed-publicar').onclick = function () {
+  var tit = $('ed-tit').value.trim(), aut = $('ed-aut').value.trim(), num = parseInt($('ed-num').value, 10);
+  if (!tit || !aut || !num) { aviso('aviso-editor', 'error', 'Escriba al menos el título, el autor y el número.'); return; }
+  var slug = editando ? editando.slug : slugDe(tit);
+  if (!editando && libros().some(function (x) { return x.slug === slug; })) { aviso('aviso-editor', 'error', 'Ya existe un libro con ese título.'); return; }
+  var fPort = $('ed-portada').files[0], fPdf = $('ed-pdf').files[0], fEpub = $('ed-epub').files[0];
+  if (!editando && (!fPort || !fPdf)) { aviso('aviso-editor', 'error', 'Para un libro nuevo elija la portada y el PDF.'); return; }
+  var dato = { slug: slug, numero: num, titulo: tit, autor: aut, categoria: $('ed-cat').value.trim(), epoca: $('ed-epoca').value.trim(),
+    paginas: parseInt($('ed-pag').value, 10) || null, descripcion: $('ed-desc').value.trim(),
+    epub: fEpub ? true : (editando ? editando.epub !== false : false) };
+  var archivos = {}, base = 'libros/' + slug + '/';
+  cargando(true, 'Preparando archivos…');
+  Promise.all([
+    fPort ? reducir(fPort, 900, .88).then(function (u) { archivos[base + 'portada.jpg'] = u; }) : null,
+    fPdf ? leerComo(fPdf).then(function (u) { archivos[base + slug + '.pdf'] = u; }) : null,
+    fEpub ? leerComo(fEpub).then(function (u) { archivos[base + slug + '.epub'] = u; }) : null
+  ]).then(function () {
+    var cat = clonar(estado.cat), lista = cat.libros || (cat.libros = []);
+    var k = lista.findIndex(function (x) { return x.slug === slug; });
+    if (k >= 0) lista[k] = dato; else lista.push(dato);
+    lista.sort(function (a, b) { return a.numero - b.numero; });
+    cat.actualizado = new Date().toISOString().slice(0, 10);
+    return confirmarCambios({ 'catalogo.json': JSON.stringify(cat, null, 1) }, archivos, [], (editando ? 'Editar' : 'Agregar') + ' libro: ' + tit).then(function () {
+      estado.cat = cat; cargando(false); pintarLibros(); verPanel('libros');
+      aviso('aviso-panel', 'ok', '✔ Publicado. La web se actualiza en 1 o 2 minutos.');
+    });
+  }).catch(function (e) { cargando(false); aviso('aviso-editor', 'error', 'No se pudo publicar: ' + e.message); });
+};
+function eliminar(l) {
+  if (!confirm('¿Eliminar «' + l.titulo + '» de la biblioteca? Se borrarán su portada y sus archivos.')) return;
+  var cat = clonar(estado.cat); cat.libros = cat.libros.filter(function (x) { return x.slug !== l.slug; });
+  var base = 'libros/' + l.slug + '/', borrar = [base + 'portada.jpg', base + l.slug + '.pdf'];
+  if (l.epub !== false) borrar.push(base + l.slug + '.epub');
+  cargando(true, 'Eliminando…');
+  confirmarCambios({ 'catalogo.json': JSON.stringify(cat, null, 1) }, {}, borrar, 'Eliminar libro: ' + l.titulo).then(function () {
+    estado.cat = cat; cargando(false); pintarLibros(); aviso('aviso-panel', 'ok', '✔ Libro eliminado.');
+  }).catch(function (e) { cargando(false); aviso('aviso-panel', 'error', 'No se pudo eliminar: ' + e.message); });
+}
+function pintarSitio() {
+  var s = estado.cat.sitio || {};
+  $('s-lema').value = s.lema || ''; $('s-pres').value = s.presentacion || ''; $('s-nombre').value = s.fundador_nombre || '';
+  $('s-bio').value = (s.fundador_bio || []).join('\n\n'); $('s-correo').value = s.correo || ''; $('s-foto').value = '';
+}
+$('s-publicar').onclick = function () {
+  var cat = clonar(estado.cat), s = cat.sitio || (cat.sitio = {});
+  s.lema = $('s-lema').value.trim(); s.presentacion = $('s-pres').value.trim(); s.fundador_nombre = $('s-nombre').value.trim();
+  s.fundador_bio = $('s-bio').value.split(/\n\s*\n/).map(function (p) { return p.trim(); }).filter(Boolean);
+  s.correo = $('s-correo').value.trim();
+  var f = $('s-foto').files[0], archivos = {};
+  cargando(true, 'Preparando…');
+  (f ? reducir(f, 900, .88).then(function (u) { var r = 'img/fundador-' + Date.now().toString(36) + '.jpg'; archivos[r] = u; s.fundador_foto = r; }) : Promise.resolve()).then(function () {
+    return confirmarCambios({ 'catalogo.json': JSON.stringify(cat, null, 1) }, archivos, [], 'Portada y fundador');
+  }).then(function () { estado.cat = cat; cargando(false); aviso('aviso-sitio', 'ok', '✔ Publicado. La web se actualiza en 1 o 2 minutos.'); })
+    .catch(function (e) { cargando(false); aviso('aviso-sitio', 'error', 'No se pudo publicar: ' + e.message); });
+};
+</script>
+</body>
+</html>
