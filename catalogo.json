@@ -1,0 +1,57 @@
+{
+ "actualizado": "2026-11-16",
+ "libros": [
+  {
+   "slug": "rimas-y-leyendas",
+   "numero": 7,
+   "titulo": "Rimas y leyendas",
+   "autor": "Gustavo Adolfo Bécquer",
+   "categoria": "Poesía",
+   "epoca": "Siglo XIX",
+   "paginas": 227,
+   "descripcion": "Las rimas más queridas de la lengua española y once leyendas de misterio ambientadas en Sevilla, Toledo, Soria y el Moncayo: órganos que suenan solos, ojos verdes en el fondo de un lago y almas en pena la noche de Difuntos."
+  },
+  {
+   "slug": "lazarillo-de-tormes",
+   "numero": 9,
+   "titulo": "Lazarillo de Tormes",
+   "autor": "Anónimo",
+   "categoria": "Novela",
+   "epoca": "Siglo XVI",
+   "paginas": 81,
+   "descripcion": "La vida de un muchacho pobre que sobrevive sirviendo a un ciego, a un clérigo avaro y a un escudero sin un real. Con él nace la novela picaresca: una mirada aguda y divertida a la hipocresía de toda una sociedad."
+  },
+  {
+   "slug": "don-quijote-seleccion",
+   "numero": 10,
+   "titulo": "Don Quijote de la Mancha",
+   "autor": "Miguel de Cervantes Saavedra",
+   "categoria": "Novela",
+   "epoca": "Siglo XVII",
+   "paginas": 173,
+   "descripcion": "Diecisiete capítulos esenciales de las dos partes, unidos por breves resúmenes, para seguir toda la historia del hidalgo que quiso ser caballero andante y de su escudero Sancho Panza, desde la primera salida hasta su muerte."
+  },
+  {
+   "slug": "ariel",
+   "numero": 18,
+   "titulo": "Ariel",
+   "autor": "José Enrique Rodó",
+   "categoria": "Ensayo",
+   "epoca": "Siglo XX",
+   "paginas": 103,
+   "descripcion": "La lección de despedida de un maestro a sus discípulos: una invitación a cultivar el espíritu, la belleza y el pensamiento propio. El ensayo que marcó a varias generaciones de jóvenes en toda América Latina."
+  }
+ ],
+ "sitio": {
+  "lema": "¡Una fuente de arte, cultura y conocimiento desde Colombia para la Humanidad!",
+  "presentacion": "Grandes obras de la literatura y el pensamiento universal en ediciones cuidadas, con presentación, notas y guía de lectura. Léalas en línea o descárguelas en PDF y EPUB.",
+  "fundador_nombre": "Ricardo Londoño González",
+  "fundador_foto": "img/fundador.jpg",
+  "fundador_bio": [
+   "Médico, escritor, conferencista e investigador colombiano. Es magíster en virus de inmunodeficiencia por la Universidad Rey Juan Carlos de España y especialista en Neurología y en Seguridad y Salud en el Trabajo.",
+   "Dirige la Revista Colombiana de Medicina y lidera grupos de investigación inscritos en el sistema nacional de ciencia. Es autor de libros sobre neurodesarrollo, historia del cristianismo, teología y negociación, y traductor de clásicos de la espiritualidad cristiana.",
+   "Fundó la Biblioteca Real con la convicción de que las grandes obras de la humanidad deben estar al alcance de todos, en ediciones que acompañen al lector."
+  ],
+  "correo": "contacto@fundacionreinaelizabeth.com"
+ }
+}

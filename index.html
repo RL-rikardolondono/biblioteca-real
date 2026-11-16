@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Biblioteca Real · Fondo Ricardo Londoño González</title>
+<meta name="description" content="Biblioteca Real: una fuente de arte, cultura y conocimiento desde Colombia para la Humanidad. Grandes obras en ediciones con presentación, notas y guía de lectura.">
+<meta property="og:title" content="Biblioteca Real">
+<meta property="og:description" content="¡Una fuente de arte, cultura y conocimiento desde Colombia para la Humanidad!">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;0,700;1,500;1,600&family=Mulish:wght@400;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="estilo.css">
+</head>
+<body>
+<header class="barra">
+  <a class="marca" href="#inicio"><span class="m1">Biblioteca</span> <span class="m2">Real</span><small>Fondo Ricardo Londoño González</small></a>
+  <nav class="menu"><a href="#salas">Catálogo</a><a href="#fundador">El fundador</a><a href="#instituciones">Instituciones</a></nav>
+</header>
+
+<section class="hero" id="inicio">
+  <div class="hero-txt">
+    <p class="sobre">Fundación Reina Elizabeth presenta</p>
+    <h1>Biblioteca <em>Real</em></h1>
+    <div class="orla" aria-hidden="true"><span></span><svg viewBox="0 0 40 16"><path d="M20 2c3 4 7 6 12 6-5 0-9 2-12 6-3-4-7-6-12-6 5 0 9-2 12-6z" fill="currentColor"/></svg><span></span></div>
+    <p class="lema" id="lema"></p>
+    <p class="lead" id="presentacion"></p>
+    <div class="cta"><a class="btn oro" href="#salas">Explorar el catálogo</a><a class="btn linea" href="#fundador">Conocer al fundador</a></div>
+  </div>
+  <div class="hero-marco">
+    <div class="marco grande"><img id="h-img" alt=""></div>
+    <p class="cartela" id="h-cartela"></p>
+    <div class="puntos" id="h-puntos"></div>
+  </div>
+</section>
+
+<div class="franja">
+  <div><b id="f-obras">—</b><span>obras en la colección</span></div>
+  <div><b>Ediciones anotadas</b><span>presentación, notas y guía</span></div>
+  <div><b>Lectura libre</b><span>en línea, PDF y EPUB</span></div>
+  <div><b>Desde Colombia</b><span>para la Humanidad</span></div>
+</div>
+
+<section class="salas" id="salas">
+  <div class="tit"><p class="sobre">La colección</p><h2>Las salas de lectura</h2><p class="sub">Cada libro de la Biblioteca Real es una edición propia: el texto clásico acompañado de una presentación que lo sitúa en su tiempo, notas que aclaran sus palabras y una guía para leerlo a fondo.</p></div>
+  <div class="herr">
+    <input id="q" type="search" placeholder="Buscar por título o autor…" aria-label="Buscar">
+    <div class="filtros" id="filtros"></div>
+  </div>
+  <div class="muro" id="muro"></div>
+  <p class="vacio" id="vacio" hidden>No encontramos obras con esa búsqueda.</p>
+</section>
+
+<section class="fundador" id="fundador">
+  <div class="f-marco"><div class="marco retrato"><img id="f-foto" alt="Retrato del fundador"></div></div>
+  <div class="f-txt">
+    <p class="sobre">El fundador</p>
+    <h2 id="f-nombre"></h2>
+    <div class="orla izq" aria-hidden="true"><span></span><svg viewBox="0 0 40 16"><path d="M20 2c3 4 7 6 12 6-5 0-9 2-12 6-3-4-7-6-12-6 5 0 9-2 12-6z" fill="currentColor"/></svg><span></span></div>
+    <div id="f-bio"></div>
+    <p class="cita">«Grandes obras que todo lector merece conocer.»</p>
+  </div>
+</section>
+
+<section class="instituciones" id="instituciones">
+  <div class="tit"><p class="sobre">Colegios, institutos y bibliotecas</p><h2>Para instituciones</h2>
+  <p class="sub">Acompañamos a las instituciones que quieran usar la colección en sus planes de lectura: selección de títulos por programa, guías para el docente y materiales de apoyo.</p>
+  <p class="sub">Escríbanos a <a id="i-correo" href="#"></a></p></div>
+</section>
+
+<footer class="pie">
+  <div class="pie-a">
+    <div><div class="marca"><span class="m1">Biblioteca</span> <span class="m2">Real</span></div><p>Una iniciativa de la <a href="https://fundacionreinaelizabeth.com">Fundación Reina Elizabeth</a>.</p></div>
+    <div><p class="sobre">La colección</p><p><a href="#salas">Catálogo</a><br><a href="#fundador">El fundador</a><br><a href="#instituciones">Instituciones</a></p></div>
+    <div><p class="sobre">Producción editorial</p><p>SkyNet Genesis<br>contacto@skynetgenesis.com</p></div>
+  </div>
+  <div class="pie-b"><span>Textos originales en dominio público. Ediciones, notas y guías de lectura © 2026. Todos los derechos reservados. Descarga autorizada para lectura personal y educativa.</span><a class="equipo" href="admin/">Ingresar (equipo)</a></div>
+</footer>
+
+<div class="velo" id="velo" hidden></div>
+<div class="modal" id="modal" hidden role="dialog" aria-modal="true">
+  <button class="cerrar" id="cerrar" aria-label="Cerrar">×</button>
+  <div class="m-izq"><div class="marco"><img id="m-img" alt=""></div></div>
+  <div class="m-der">
+    <p class="sobre" id="m-num"></p>
+    <h3 id="m-tit"></h3>
+    <p class="m-aut" id="m-aut"></p>
+    <p class="m-meta" id="m-meta"></p>
+    <p id="m-desc"></p>
+    <div class="m-acc">
+      <a id="m-leer" class="btn oro" target="_blank" rel="noopener">Leer en línea</a>
+      <a id="m-pdf" class="btn oscuro" download>Descargar PDF</a>
+      <a id="m-epub" class="btn claro" download>Descargar EPUB</a>
+    </div>
+    <p class="m-nota">EPUB: formato para lectores electrónicos y celulares (Kindle, Google Play Libros, Apple Books).</p>
+  </div>
+</div>
+<script src="app.js"></script>
+</body>
+</html>
