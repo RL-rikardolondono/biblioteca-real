@@ -107,3 +107,22 @@ h1,h2,h3,.marca{font-family:"Cormorant Garamond",Georgia,serif;font-weight:600;l
 .g-salas div{border:1px solid rgba(201,162,74,.4);padding:16px 20px;background:rgba(0,0,0,.18)}
 .g-salas b{display:block;font:600 24px "Cormorant Garamond",serif;color:var(--oro2)}.g-salas span{font-size:14px;opacity:.85}
 @media(max-width:860px){.galeria{grid-template-columns:1fr;text-align:center}.galeria p{margin-inline:auto}}
+
+/* banda lectores */
+.banda{position:relative;height:clamp(300px,46vw,520px);overflow:hidden;background:var(--carbon)}
+.banda img{width:100%;height:100%;object-fit:cover;filter:brightness(.55) sepia(.25)}
+.banda-txt{position:absolute;inset:0;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;padding:24px;color:var(--marfil)}
+.banda-cita{font:italic 500 clamp(26px,3.6vw,46px)/1.2 "Cormorant Garamond",serif;max-width:900px;margin:0;color:var(--marfil)}
+.banda-txt small{margin-top:14px;font:600 12px Mulish;letter-spacing:.2em;text-transform:uppercase;color:var(--oro2)}
+/* instituciones con foto */
+.instituciones{display:grid;grid-template-columns:.9fr 1.1fr;gap:56px;align-items:center}
+.instituciones .tit{text-align:left;margin:0}.instituciones .sub{margin-left:0}
+.inst-foto .marco img{width:100%;aspect-ratio:4/3;object-fit:cover}
+@media(max-width:860px){.instituciones{grid-template-columns:1fr}.instituciones .tit{text-align:center}.instituciones .sub{margin-inline:auto}}
+/* cafe */
+.cafe{display:grid;grid-template-columns:1.1fr 1fr;background:var(--carbon);color:var(--marfil)}
+.cafe-foto img{width:100%;height:100%;min-height:360px;object-fit:cover}
+.cafe-txt{padding:72px max(20px,6vw);display:flex;flex-direction:column;justify-content:center}
+.cafe h2{font-size:clamp(38px,4.2vw,58px)}.cafe h2 em{color:var(--oro2);font-weight:500}
+.cafe p{opacity:.9;margin:0 0 14px;max-width:520px}.cafe-nota{font:italic 500 20px "Cormorant Garamond",serif;color:var(--oro2)!important;opacity:1!important}
+@media(max-width:860px){.cafe{grid-template-columns:1fr}.cafe-foto img{min-height:260px}}
