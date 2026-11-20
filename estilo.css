@@ -126,3 +126,5 @@ h1,h2,h3,.marca{font-family:"Cormorant Garamond",Georgia,serif;font-weight:600;l
 .cafe h2{font-size:clamp(38px,4.2vw,58px)}.cafe h2 em{color:var(--oro2);font-weight:500}
 .cafe p{opacity:.9;margin:0 0 14px;max-width:520px}.cafe-nota{font:italic 500 20px "Cormorant Garamond",serif;color:var(--oro2)!important;opacity:1!important}
 @media(max-width:860px){.cafe{grid-template-columns:1fr}.cafe-foto img{min-height:260px}}
+
+.galeria.rae{background:radial-gradient(ellipse at 20% 50%,#2a2f3a 0%,var(--carbon) 70%)}
