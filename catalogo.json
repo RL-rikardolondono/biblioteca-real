@@ -1,5 +1,5 @@
 {
- "actualizado": "2026-11-16",
+ "actualizado": "2026-11-21",
  "libros": [
   {
    "slug": "rimas-y-leyendas",
@@ -40,6 +40,16 @@
    "epoca": "Siglo XX",
    "paginas": 103,
    "descripcion": "La lección de despedida de un maestro a sus discípulos: una invitación a cultivar el espíritu, la belleza y el pensamiento propio. El ensayo que marcó a varias generaciones de jóvenes en toda América Latina."
+  },
+  {
+   "slug": "maria",
+   "numero": 8,
+   "titulo": "María",
+   "autor": "Jorge Isaacs",
+   "categoria": "Novela",
+   "epoca": "Siglo XIX",
+   "paginas": 401,
+   "descripcion": "La gran novela romántica de Colombia: Efraín regresa a la hacienda familiar en el valle del Cauca y se enamora de su prima María, mientras una enfermedad y un viaje a Londres amenazan su amor. Un retrato inolvidable del paisaje y la vida del siglo XIX."
   }
  ],
  "sitio": {
@@ -384,11 +394,6 @@
   {
    "titulo": "Veinte mil leguas de viaje submarino",
    "autor": "Julio Verne",
-   "categoria": "Novela"
-  },
-  {
-   "titulo": "María",
-   "autor": "Jorge Isaacs",
    "categoria": "Novela"
   },
   {
