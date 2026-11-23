@@ -1,5 +1,5 @@
 {
- "actualizado": "2026-11-21",
+ "actualizado": "2026-11-22",
  "libros": [
   {
    "slug": "rimas-y-leyendas",
@@ -50,6 +50,16 @@
    "epoca": "Siglo XIX",
    "paginas": 401,
    "descripcion": "La gran novela romántica de Colombia: Efraín regresa a la hacienda familiar en el valle del Cauca y se enamora de su prima María, mientras una enfermedad y un viaje a Londres amenazan su amor. Un retrato inolvidable del paisaje y la vida del siglo XIX."
+  },
+  {
+   "slug": "cuentos-pintados",
+   "numero": 2,
+   "titulo": "Cuentos pintados",
+   "autor": "Rafael Pombo",
+   "categoria": "Infantil y juvenil",
+   "epoca": "Siglo XIX",
+   "paginas": 73,
+   "descripcion": "El renacuajo paseador, La pobre viejecita, Simón el bobito, Mirringa Mirronga y el gato bandido: los cuentos en verso con los que Rafael Pombo alegró la infancia de generaciones, junto con una selección de sus poemas para lectores de todas las edades."
   }
  ],
  "sitio": {
@@ -369,11 +379,6 @@
   {
    "titulo": "Fábulas",
    "autor": "Esopo",
-   "categoria": "Infantil y juvenil"
-  },
-  {
-   "titulo": "Cuentos pintados",
-   "autor": "Rafael Pombo",
    "categoria": "Infantil y juvenil"
   },
   {
