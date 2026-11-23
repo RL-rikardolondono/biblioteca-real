@@ -1,5 +1,5 @@
 {
- "actualizado": "2026-11-22",
+ "actualizado": "2026-11-23",
  "libros": [
   {
    "slug": "rimas-y-leyendas",
@@ -60,6 +60,16 @@
    "epoca": "Siglo XIX",
    "paginas": 73,
    "descripcion": "El renacuajo paseador, La pobre viejecita, Simón el bobito, Mirringa Mirronga y el gato bandido: los cuentos en verso con los que Rafael Pombo alegró la infancia de generaciones, junto con una selección de sus poemas para lectores de todas las edades."
+  },
+  {
+   "slug": "fabulas-de-esopo",
+   "numero": 1,
+   "titulo": "Fábulas",
+   "autor": "Esopo",
+   "categoria": "Infantil y juvenil",
+   "epoca": "Antigüedad",
+   "paginas": 73,
+   "descripcion": "Ochenta y una fábulas del sabio esclavo griego, en traducción nueva al español: la zorra y las uvas, la liebre y la tortuga, el león y el ratón, el pastorcito mentiroso y muchas más. Historias breves con animales que hablan y una moraleja para cada edad."
   }
  ],
  "sitio": {
@@ -376,11 +386,6 @@
   }
  ],
  "proximos": [
-  {
-   "titulo": "Fábulas",
-   "autor": "Esopo",
-   "categoria": "Infantil y juvenil"
-  },
   {
    "titulo": "Las aventuras de Pinocho",
    "autor": "Carlo Collodi",
